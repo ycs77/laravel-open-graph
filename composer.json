@@ -1,0 +1,52 @@
+{
+    "name": "ycs77/laravel-open-graph",
+    "description": "Setting Open Graph for Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lucas Yang",
+            "email": "yangchenshin77@gmail.com"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "opengraph",
+        "social",
+        "keyword",
+        "description"
+    ],
+    "homepage": "https://github.com/ycs77/laravel-open-graph",
+    "require": {
+        "php": "^7.1.3",
+        "illuminate/support": ">=5.6",
+        "illuminate/contracts": ">=5.6"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.3.1",
+        "phpunit/phpunit": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ycs77\\LaravelOpenGraph\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ycs77\\LaravelOpenGraph\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ycs77\\LaravelOpenGraph\\OpenGraphServiceProvider"
+            ],
+            "aliases": {
+                "OpenGraph": "Ycs77\\LaravelOpenGraph\\Facades\\OpenGraph"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
