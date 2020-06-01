@@ -16,7 +16,7 @@ Via Composer install:
 composer require ycs77/laravel-open-graph
 ```
 
-Include Open Graph meta view to your layout:
+Include Open Graph meta view into your layout `<head>`:
 
 ```blade
 @include('open-graph::meta')
@@ -24,26 +24,57 @@ Include Open Graph meta view to your layout:
 
 ## Usage
 
-Set Open Graph metadata, this example page title is Laravel app name:
+Set Open Graph metadata into Controller (this example page title default is Laravel app name):
 
+*HomeController*
 ```php
-OpenGraph::start()
-    ->title()
-    ->description(config('app.description'))
-    ->image(asset('images/og-image.png'));
+<?php
+
+namespace App\Http\Controllers;
+
+use Ycs77\LaravelOpenGraph\Facades\OpenGraph;
+
+class HomeController extends Controller
+{
+    public function index()
+    {
+        OpenGraph::start()
+            ->title()
+            ->description('The site description...')
+            ->image(asset('images/og-image.png'));
+
+        return view('home');
+    }
+}
 ```
 
-Set the article's Open Graph metadata, this example article title like `Article name - App name`:
+Set the article's Open Graph metadata Controller (this example article title like `Article name - App name`):
 
+*ArticleController*
 ```php
-OpenGraph::start()
-    ->type('article')
-    ->title($article->title)
-    ->description($article->short_description)
-    ->image($article->thumbnail)
-    ->data([
-        'article:published_time' => $article->created_at->toIso8601String(),
-    ]);
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Article;
+use Ycs77\LaravelOpenGraph\Facades\OpenGraph;
+
+class ArticleController extends Controller
+{
+    public function show(Article $article)
+    {
+        OpenGraph::start()
+            ->type('article')
+            ->title($article->title)
+            ->description($article->description)
+            ->image($article->thumbnail)
+            ->data([
+                'article:published_time' => $article->created_at->toIso8601String(),
+            ]);
+
+        return view('home');
+    }
+}
 ```
 
 Open Graph references: https://developers.facebook.com/docs/sharing/webmasters/
