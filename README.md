@@ -81,11 +81,11 @@ Open Graph references: https://developers.facebook.com/docs/sharing/webmasters/
 
 [ico-version]: https://img.shields.io/packagist/v/ycs77/laravel-open-graph?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square
-[ico-ci]: https://img.shields.io/travis/ycs77/laravel-open-graph?style=flat-square
+[ico-ci]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fycs77%2Flaravel-open-graph%2Fbadge%3Fref%3Dmain&label=build&logo=none&style=flat-square
 [ico-style-ci]: https://github.styleci.io/repos/268535672/shield?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/ycs77/laravel-open-graph?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/ycs77/laravel-open-graph
-[link-ci]: https://travis-ci.org/ycs77/laravel-open-graph
+[link-ci]: https://actions-badge.atrox.dev/ycs77/laravel-open-graph/goto?ref=main
 [link-style-ci]: https://github.styleci.io/repos/268535672
 [link-downloads]: https://packagist.org/packages/ycs77/laravel-open-graph
