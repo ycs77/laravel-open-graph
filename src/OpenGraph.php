@@ -24,7 +24,7 @@ class OpenGraph
     /**
      * The open graph meta description.
      *
-     * @var string
+     * @var string|null
      */
     protected $description;
 
@@ -140,9 +140,9 @@ class OpenGraph
     /**
      * Get the open graph meta description.
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
