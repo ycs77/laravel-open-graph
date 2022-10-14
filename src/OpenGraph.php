@@ -127,10 +127,10 @@ class OpenGraph
     /**
      * Set the open graph meta description.
      *
-     * @param  string  $description
+     * @param  string|null  $description
      * @return $this
      */
-    public function description(string $description)
+    public function description(string $description = null)
     {
         $this->description = $description;
 
