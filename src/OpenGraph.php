@@ -109,7 +109,7 @@ class OpenGraph
     {
         $this->title = function_exists('title')
             ? title($pageTitle ?? '')
-            : (($pageTitle ? $pageTitle . $glue : '') . $this->config->get('app.name'));
+            : (($pageTitle ? $pageTitle.$glue : '').$this->config->get('app.name'));
 
         return $this;
     }

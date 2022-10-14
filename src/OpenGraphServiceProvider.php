@@ -27,6 +27,6 @@ class OpenGraphServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'open-graph');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'open-graph');
     }
 }
