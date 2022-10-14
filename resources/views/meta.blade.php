@@ -8,8 +8,8 @@
     @if (OpenGraph::getDescription())
         <meta property="og:description" content="{{ OpenGraph::getDescription() }}" />
     @endif
-    @if ($openGraphImage = OpenGraph::getImage())
-        <meta property="og:image" content="{{ $openGraphImage }}" />
+    @if (OpenGraph::getImage())
+        <meta property="og:image" content="{{ OpenGraph::getImage() }}" />
     @endif
     @foreach (OpenGraph::getData() as $key => $value)
         <meta property="og:{{ $key }}" content="{{ $value }}" />
