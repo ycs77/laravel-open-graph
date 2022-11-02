@@ -106,7 +106,7 @@ class OpenGraph
      * @return $this
      * @deprecated
      */
-    public function title(string $pageTitle = null, $glue = ' - '): OpenGraph
+    public function title(string $pageTitle = null, string $glue = ' - '): OpenGraph
     {
         return $this->setTitle($pageTitle, $glue);
     }
@@ -128,7 +128,7 @@ class OpenGraph
      * @param  string  $glue
      * @return $this
      */
-    public function setTitle(string $pageTitle = null, $glue = ' - '): OpenGraph
+    public function setTitle(string $pageTitle = null, string $glue = ' - '): OpenGraph
     {
         $this->title = function_exists('title')
             ? title($pageTitle ?? '')
