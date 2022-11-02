@@ -130,9 +130,11 @@ class OpenGraph
      */
     public function setTitle(string $pageTitle = null, string $glue = ' - '): OpenGraph
     {
-        $this->title = function_exists('title')
-            ? title($pageTitle ?? '')
-            : (($pageTitle ? $pageTitle.$glue : '').$this->config->get('app.name'));
+        if (function_exists('title')) {
+            $this->title = title($pageTitle ?? '');
+        } else {
+            $this->title = ($pageTitle ? $pageTitle.$glue : '').$this->config->get('app.name');
+        }
 
         return $this;
     }
