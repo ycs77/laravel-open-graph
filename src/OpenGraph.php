@@ -59,22 +59,22 @@ class OpenGraph
     /**
      * The config repository instance.
      *
-     * @var \Illuminate\Contracts\Config\Repository
+     * @var Repository
      */
     protected $config;
 
     /**
      * The url generator instance.
      *
-     * @var \Illuminate\Contracts\Routing\UrlGenerator
+     * @var UrlGenerator
      */
     protected $urlGenerator;
 
     /**
      * Create a new laravel open graph instance.
      *
-     * @param  \Illuminate\Contracts\Config\Repository  $config
-     * @param  \Illuminate\Contracts\Routing\UrlGenerator  $urlGenerator
+     * @param Repository $config
+     * @param UrlGenerator $urlGenerator
      * @return void
      */
     public function __construct(Repository $config, UrlGenerator $urlGenerator)
