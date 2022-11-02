@@ -91,7 +91,7 @@ class OpenGraph
      *
      * @return $this
      */
-    public function start()
+    public function start(): OpenGraph
     {
         $this->enabled = true;
 
@@ -106,7 +106,7 @@ class OpenGraph
      * @return $this
      * @deprecated
      */
-    public function title(string $pageTitle = null, $glue = ' - ')
+    public function title(string $pageTitle = null, $glue = ' - '): OpenGraph
     {
         return $this->setTitle($pageTitle, $glue);
     }
@@ -128,7 +128,7 @@ class OpenGraph
      * @param  string  $glue
      * @return $this
      */
-    public function setTitle(string $pageTitle = null, $glue = ' - ')
+    public function setTitle(string $pageTitle = null, $glue = ' - '): OpenGraph
     {
         $this->title = function_exists('title')
             ? title($pageTitle ?? '')
@@ -144,7 +144,7 @@ class OpenGraph
      * @return $this
      * @deprecated
      */
-    public function description(string $description = null)
+    public function description(string $description = null): OpenGraph
     {
         return $this->setDescription($description);
     }
@@ -165,7 +165,7 @@ class OpenGraph
      * @param  string|null  $description
      * @return $this
      */
-    public function setDescription(string $description = null)
+    public function setDescription(string $description = null): OpenGraph
     {
         $this->description = $description;
 
@@ -179,7 +179,7 @@ class OpenGraph
      * @return $this
      * @deprecated
      */
-    public function url(string $url)
+    public function url(string $url): OpenGraph
     {
         return $this->setUrl($url);
     }
@@ -200,7 +200,7 @@ class OpenGraph
      * @param  string  $url
      * @return $this
      */
-    public function setUrl(string $url)
+    public function setUrl(string $url): OpenGraph
     {
         $this->url = $url;
 
@@ -214,7 +214,7 @@ class OpenGraph
      * @return $this
      * @deprecated
      */
-    public function type(string $type)
+    public function type(string $type): OpenGraph
     {
         return $this->setType($type);
     }
@@ -235,7 +235,7 @@ class OpenGraph
      * @param  string  $type
      * @return $this
      */
-    public function setType(string $type)
+    public function setType(string $type): OpenGraph
     {
         $this->type = $type;
 
@@ -249,7 +249,7 @@ class OpenGraph
      * @return $this
      * @deprecated
      */
-    public function image(string $image)
+    public function image(string $image): OpenGraph
     {
         return $this->setImage($image);
     }
@@ -270,7 +270,7 @@ class OpenGraph
      * @param  string  $image
      * @return $this
      */
-    public function setImage(string $image)
+    public function setImage(string $image): OpenGraph
     {
         $this->image = $image;
 
@@ -284,7 +284,7 @@ class OpenGraph
      * @return $this
      * @deprecated
      */
-    public function data(array $data)
+    public function data(array $data): OpenGraph
     {
         return $this->setData($data);
     }
@@ -305,7 +305,7 @@ class OpenGraph
      * @param  array  $data
      * @return $this
      */
-    public function setData(array $data)
+    public function setData(array $data): OpenGraph
     {
         $this->data = array_merge($this->data, $data);
 
@@ -317,7 +317,7 @@ class OpenGraph
      *
      * @return bool
      */
-    public function isEnabled()
+    public function isEnabled(): bool
     {
         return $this->enabled;
     }
