@@ -104,14 +104,11 @@ class OpenGraph
      * @param  string|null  $pageTitle
      * @param  string  $glue
      * @return $this
+     * @deprecated
      */
     public function title(string $pageTitle = null, $glue = ' - ')
     {
-        $this->title = function_exists('title')
-            ? title($pageTitle ?? '')
-            : (($pageTitle ? $pageTitle.$glue : '').$this->config->get('app.name'));
-
-        return $this;
+        return $this->setTitle($pageTitle, $glue);
     }
 
     /**
@@ -125,16 +122,31 @@ class OpenGraph
     }
 
     /**
+     * Set the open graph meta title.
+     *
+     * @param  string|null  $pageTitle
+     * @param  string  $glue
+     * @return $this
+     */
+    public function setTitle(string $pageTitle = null, $glue = ' - ')
+    {
+        $this->title = function_exists('title')
+            ? title($pageTitle ?? '')
+            : (($pageTitle ? $pageTitle.$glue : '').$this->config->get('app.name'));
+
+        return $this;
+    }
+
+    /**
      * Set the open graph meta description.
      *
      * @param  string|null  $description
      * @return $this
+     * @deprecated
      */
     public function description(string $description = null)
     {
-        $this->description = $description;
-
-        return $this;
+        return $this->setDescription($description);
     }
 
     /**
@@ -148,16 +160,28 @@ class OpenGraph
     }
 
     /**
+     * Set the open graph meta description.
+     *
+     * @param  string|null  $description
+     * @return $this
+     */
+    public function setDescription(string $description = null)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
      * Set the open graph meta url.
      *
      * @param  string  $url
      * @return $this
+     * @deprecated
      */
     public function url(string $url)
     {
-        $this->url = $url;
-
-        return $this;
+        return $this->setUrl($url);
     }
 
     /**
@@ -171,16 +195,28 @@ class OpenGraph
     }
 
     /**
+     * Set the open graph meta url.
+     *
+     * @param  string  $url
+     * @return $this
+     */
+    public function setUrl(string $url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
      * Set the open graph meta type.
      *
      * @param  string  $type
      * @return $this
+     * @deprecated
      */
     public function type(string $type)
     {
-        $this->type = $type;
-
-        return $this;
+        return $this->setType($type);
     }
 
     /**
@@ -194,16 +230,28 @@ class OpenGraph
     }
 
     /**
+     * Set the open graph meta type.
+     *
+     * @param  string  $type
+     * @return $this
+     */
+    public function setType(string $type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
      * Set the open graph meta image.
      *
      * @param  string  $image
      * @return $this
+     * @deprecated
      */
     public function image(string $image)
     {
-        $this->image = $image;
-
-        return $this;
+        return $this->setImage($image);
     }
 
     /**
@@ -217,16 +265,28 @@ class OpenGraph
     }
 
     /**
+     * Set the open graph meta image.
+     *
+     * @param  string  $image
+     * @return $this
+     */
+    public function setImage(string $image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
      * Set the open graph meta data.
      *
      * @param  array  $data
      * @return $this
+     * @deprecated
      */
     public function data(array $data)
     {
-        $this->data = array_merge($this->data, $data);
-
-        return $this;
+        return $this->setData($data);
     }
 
     /**
@@ -237,6 +297,19 @@ class OpenGraph
     public function getData(): array
     {
         return $this->data;
+    }
+
+    /**
+     * Set the open graph meta data.
+     *
+     * @param  array  $data
+     * @return $this
+     */
+    public function setData(array $data)
+    {
+        $this->data = array_merge($this->data, $data);
+
+        return $this;
     }
 
     /**
