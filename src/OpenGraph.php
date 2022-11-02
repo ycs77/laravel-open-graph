@@ -300,7 +300,7 @@ class OpenGraph
     }
 
     /**
-     * Set the open graph meta data.
+     * Set the open graph metadata.
      *
      * @param  array  $data
      * @return $this
