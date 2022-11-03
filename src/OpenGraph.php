@@ -274,6 +274,7 @@ class OpenGraph
      *
      * @param  string  $image
      * @return OpenGraph
+     *
      * @deprecated
      */
     public function image(string $image): OpenGraph
@@ -374,10 +375,11 @@ class OpenGraph
     }
 
     /**
-     * Set the open graph meta data.
+     * Set the open graph metadata.
      *
      * @param  array  $data
      * @return OpenGraph
+     *
      * @deprecated
      */
     public function data(array $data): OpenGraph
@@ -386,7 +388,7 @@ class OpenGraph
     }
 
     /**
-     * Get the open graph meta data.
+     * Get the open graph metadata.
      *
      * @return array
      */
