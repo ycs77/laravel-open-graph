@@ -344,9 +344,9 @@ class OpenGraph
      * @param  string  $locale
      * @return OpenGraph
      */
-    public function setAlternateLocale(string $locale): OpenGraph
+    public function setAlternateLocale(array $locales): OpenGraph
     {
-        $this->locale = array_merge($this->data, $locale);
+        $this->alternateLocale = array_merge($this->alternateLocale, $locales);
 
         return $this;
     }
@@ -364,12 +364,12 @@ class OpenGraph
     /**
      * Set the open graph meta site name.
      *
-     * @param  ?string  $siteName
+     * @param  string|null  $siteName
      * @return OpenGraph
      */
     public function setSiteName(string $siteName = null): OpenGraph
     {
-        $this->siteName = $siteName ?: $this->config->get('app.name');
+        $this->siteName = !is_null($siteName) ? $siteName : $this->config->get('app.name');
 
         return $this;
     }

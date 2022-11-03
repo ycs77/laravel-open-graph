@@ -92,7 +92,6 @@ class OpenGraphTest extends TestCase
         $this->assertTrue($openGraph->isEnabled());
         $this->assertEquals('Test app', $openGraph->getTitle());
         $this->assertEquals('Test app description...', $openGraph->getDescription());
-        $this->assertEquals('Test app', $openGraph->getSiteName());
         $this->assertNull($openGraph->getImage());
         $this->assertEquals('website', $openGraph->getType());
     }
@@ -145,8 +144,7 @@ class OpenGraphTest extends TestCase
 
         $openGraph = new OpenGraph($config, $urlGenerator);
         $openGraph->start()
-            ->setAlternateLocale('en_GB')
-            ->setAlternateLocale('fr_FR');
+            ->setAlternateLocale(['en_GB','fr_FR']);
 
         $this->assertTrue($openGraph->isEnabled());
         $this->assertEquals([
@@ -176,10 +174,10 @@ class OpenGraphTest extends TestCase
 
         $openGraph = new OpenGraph($config, $urlGenerator);
         $openGraph->start()
-            ->setSiteName('Test app');
+            ->setSiteName('Test app name');
 
         $this->assertTrue($openGraph->isEnabled());
-        $this->assertEquals('Test app', $openGraph->getSiteName());
+        $this->assertEquals('Test app name', $openGraph->getSiteName());
     }
 
     public function testSetOtherOpenGraphData()
