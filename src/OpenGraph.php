@@ -94,8 +94,8 @@ class OpenGraph
     /**
      * Create a new laravel open graph instance.
      *
-     * @param Repository $config
-     * @param UrlGenerator $urlGenerator
+     * @param  Repository $config
+     * @param  UrlGenerator $urlGenerator
      * @return void
      */
     public function __construct(Repository $config, UrlGenerator $urlGenerator)
@@ -125,6 +125,7 @@ class OpenGraph
      * @param  string|null  $pageTitle
      * @param  string  $glue
      * @return OpenGraph
+     *
      * @deprecated
      */
     public function title(string $pageTitle = null, string $glue = ' - '): OpenGraph
@@ -165,6 +166,7 @@ class OpenGraph
      *
      * @param  string|null  $description
      * @return OpenGraph
+     *
      * @deprecated
      */
     public function description(string $description = null): OpenGraph
@@ -200,6 +202,7 @@ class OpenGraph
      *
      * @param  string  $url
      * @return OpenGraph
+     *
      * @deprecated
      */
     public function url(string $url): OpenGraph
@@ -235,6 +238,7 @@ class OpenGraph
      *
      * @param  string  $type
      * @return OpenGraph
+     *
      * @deprecated
      */
     public function type(string $type): OpenGraph
