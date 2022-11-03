@@ -94,7 +94,7 @@ class OpenGraph
     /**
      * Create a new laravel open graph instance.
      *
-     * @param  Repository $config
+     * @param  Repository  $config
      * @param  UrlGenerator $urlGenerator
      * @return void
      */
