@@ -50,6 +50,27 @@ class OpenGraph
     protected $image;
 
     /**
+     * The open graph meta locale.
+     *
+     * @var string
+     */
+    protected $locale;
+
+    /**
+     * The open graph meta alternate locale.
+     *
+     * @var array
+     */
+    protected $alternateLocale = [];
+
+    /**
+     * The open graph meta site name.
+     *
+     * @var string
+     */
+    protected $siteName;
+
+    /**
      * The other open graph meta data.
      *
      * @var array
@@ -89,7 +110,7 @@ class OpenGraph
     /**
      * Start build open graph meta data.
      *
-     * @return $this
+     * @return OpenGraph
      */
     public function start(): OpenGraph
     {
@@ -103,7 +124,7 @@ class OpenGraph
      *
      * @param  string|null  $pageTitle
      * @param  string  $glue
-     * @return $this
+     * @return OpenGraph
      * @deprecated
      */
     public function title(string $pageTitle = null, string $glue = ' - '): OpenGraph
@@ -126,7 +147,7 @@ class OpenGraph
      *
      * @param  string|null  $pageTitle
      * @param  string  $glue
-     * @return $this
+     * @return OpenGraph
      */
     public function setTitle(string $pageTitle = null, string $glue = ' - '): OpenGraph
     {
@@ -143,7 +164,7 @@ class OpenGraph
      * Set the open graph meta description.
      *
      * @param  string|null  $description
-     * @return $this
+     * @return OpenGraph
      * @deprecated
      */
     public function description(string $description = null): OpenGraph
@@ -165,7 +186,7 @@ class OpenGraph
      * Set the open graph meta description.
      *
      * @param  string|null  $description
-     * @return $this
+     * @return OpenGraph
      */
     public function setDescription(string $description = null): OpenGraph
     {
@@ -178,7 +199,7 @@ class OpenGraph
      * Set the open graph meta url.
      *
      * @param  string  $url
-     * @return $this
+     * @return OpenGraph
      * @deprecated
      */
     public function url(string $url): OpenGraph
@@ -200,7 +221,7 @@ class OpenGraph
      * Set the open graph meta url.
      *
      * @param  string  $url
-     * @return $this
+     * @return OpenGraph
      */
     public function setUrl(string $url): OpenGraph
     {
@@ -213,7 +234,7 @@ class OpenGraph
      * Set the open graph meta type.
      *
      * @param  string  $type
-     * @return $this
+     * @return OpenGraph
      * @deprecated
      */
     public function type(string $type): OpenGraph
@@ -235,7 +256,7 @@ class OpenGraph
      * Set the open graph meta type.
      *
      * @param  string  $type
-     * @return $this
+     * @return OpenGraph
      */
     public function setType(string $type): OpenGraph
     {
@@ -248,7 +269,7 @@ class OpenGraph
      * Set the open graph meta image.
      *
      * @param  string  $image
-     * @return $this
+     * @return OpenGraph
      * @deprecated
      */
     public function image(string $image): OpenGraph
@@ -270,7 +291,7 @@ class OpenGraph
      * Set the open graph meta image.
      *
      * @param  string  $image
-     * @return $this
+     * @return OpenGraph
      */
     public function setImage(string $image): OpenGraph
     {
@@ -280,10 +301,79 @@ class OpenGraph
     }
 
     /**
+     * Get the open graph meta locale.
+     *
+     * @return string
+     */
+    public function getLocale(): ?string
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Set the open graph meta locale.
+     *
+     * @param  string  $locale
+     * @return OpenGraph
+     */
+    public function setLocale(string $locale): OpenGraph
+    {
+        $this->locale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Get the open graph meta alternate locale.
+     *
+     * @return array
+     */
+    public function getAlternateLocale(): array
+    {
+        return $this->alternateLocale;
+    }
+
+    /**
+     * Set the open graph meta alternate locale.
+     *
+     * @param  string  $locale
+     * @return OpenGraph
+     */
+    public function setAlternateLocale(string $locale): OpenGraph
+    {
+        $this->locale = array_merge($this->data, $locale);
+
+        return $this;
+    }
+
+    /**
+     * Get the open graph meta site name.
+     *
+     * @return string|null
+     */
+    public function getSiteName(): ?string
+    {
+        return $this->siteName;
+    }
+
+    /**
+     * Set the open graph meta site name.
+     *
+     * @param  ?string  $siteName
+     * @return OpenGraph
+     */
+    public function setSiteName(string $siteName = null): OpenGraph
+    {
+        $this->siteName = $siteName ?: $this->config->get('app.name');
+
+        return $this;
+    }
+
+    /**
      * Set the open graph meta data.
      *
      * @param  array  $data
-     * @return $this
+     * @return OpenGraph
      * @deprecated
      */
     public function data(array $data): OpenGraph
@@ -305,7 +395,7 @@ class OpenGraph
      * Set the open graph metadata.
      *
      * @param  array  $data
-     * @return $this
+     * @return OpenGraph
      */
     public function setData(array $data): OpenGraph
     {
