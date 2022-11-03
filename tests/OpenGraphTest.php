@@ -144,12 +144,12 @@ class OpenGraphTest extends TestCase
 
         $openGraph = new OpenGraph($config, $urlGenerator);
         $openGraph->start()
-            ->setAlternateLocale(['en_GB','fr_FR']);
+            ->setAlternateLocale(['en_GB', 'fr_FR']);
 
         $this->assertTrue($openGraph->isEnabled());
         $this->assertEquals([
             'en_GB',
-            'fr_FR'
+            'fr_FR',
         ], $openGraph->getAlternateLocale());
     }
 

@@ -369,7 +369,7 @@ class OpenGraph
      */
     public function setSiteName(string $siteName = null): OpenGraph
     {
-        $this->siteName = !is_null($siteName) ? $siteName : $this->config->get('app.name');
+        $this->siteName = ! is_null($siteName) ? $siteName : $this->config->get('app.name');
 
         return $this;
     }
