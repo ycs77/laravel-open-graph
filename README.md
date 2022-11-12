@@ -6,6 +6,12 @@
 [![Style CI Build Status][ico-style-ci]][link-style-ci]
 [![Total Downloads][ico-downloads]][link-downloads]
 
+---
+
+**Recommended to use [archtechx/laravel-seo](https://github.com/archtechx/laravel-seo) or [artesaos/seotools](https://github.com/artesaos/seotools) package instead.**
+
+---
+
 Setting Open Graph for Laravel.
 
 ## Install
