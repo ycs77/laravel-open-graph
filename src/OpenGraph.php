@@ -4,9 +4,12 @@ namespace Ycs77\LaravelOpenGraph;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Routing\UrlGenerator;
+use Illuminate\Support\Traits\Macroable;
 
 class OpenGraph
 {
+    use Macroable;
+
     /**
      * Open graph is enabled.
      *
